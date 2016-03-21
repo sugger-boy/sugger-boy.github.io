@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/response.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<link rel="stylesheet" href="css/icon/iconfont.css">
+	<link rel="stylesheet" href="css/font/iconfont.css">
+	<link rel="stylesheet" href="css/cao/cao.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/animate.css">
+    
+	<script>
+	window.onload=function(){
+		// 获取页面元素
+        var myElement = document.querySelector("header");
+        // 创建 Headroom 对象，将页面元素传递进去
+        var headroom  = new Headroom(myElement);
+        // 初始化
+        headroom.init();
+
+        // contact
+        var box=document.querySelector(".contact-middle");
+       	     var boss=document.querySelector(".contact-middleboss");
+       	     var small=document.querySelectorAll(".contact-middlesmall");
+       	     var r=110;
+             var ang=90/(small.length-1);
+             var flag=true;
+             
+       	     boss.onclick=function(){
+       	     	if (flag) {
+       	     		console.log(boss);
+       	     		this.style.transform="rotate(360deg)";
+       	     		for (var i = 0; i < small.length; i++) {
+       	         	var xy=getXY(ang*i,r)
+       	         	   small[i].style.transitionDelay=i*0.1+"s";
+                 	   small[i].style.transform="translate("+-xy.x+"px,"+xy.y+"px) ";
+
+                    };
+                    flag=false;
+       	     	}else{
+       	     		this.style.transform="rotate(0deg)";
+       	     		for (var i = 0; i < small.length; i++) {
+       	         	var xy=getXY(ang*i,r)
+       	         	small[i].style.transitionDelay=(small.length-i)*0.1+"s";
+                 	   small[i].style.transform="translate(0px,0px) ";
+
+                    };
+                    flag=true;
+       	     	}
+       	         
+       	     }
+
+       	function getXY(ang,r){
+    	var o={};
+    	o.x=-r*Math.sin(ang*Math.PI/180);
+        o.y=-r*Math.cos(ang*Math.PI/180);
+        return o;
+    }
+	  }
+	</script>  
+	<script src="js/jquery.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/headroom.js"></script>      
+</head>
+<body>
+		<header class="container-fluid nav-box">
+		<div class="container aa">
+			<div class="roww">
+			<div class="min-nav">
+				<a class="btn iconfont">
+					&#xe601;
+				</a>
+				
+			</div>
+			<div class="max-nav">
+				<div class="myname">
+					<span>H yf</span>
+				</div>
+				<div class="floorbtn">
+					
+				    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 navcons">Home</div>
+				    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 navcons">About Me</div>
+				    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 navcons">Skill</div>
+				    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 navcons">Design</div>
+				    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 navcons">Contact</div>
+				   
+				</div>
+				
+			</div>
+			</div>
+		</div>
+	</header>
+	<section class="container-fluid banner">
+		<p>欢 迎 来 到 我 的 个 人 网 站</p>
+		<p class="hai animated"><span>I'm a front-end developer.</span></p>
+		<div class="caobox">
+		    <div class="caocao sky">&#xe601;</div>
+		</div>
+	</section>
+	
+	
+	<div class="container-fluid zb">
+		<div class="row">
+			<div class="scene two col-s-20 col-l-20 col-m-20">
+				<div class="container ca">
+					<div class="row">
+                         <div class="skill">
+								About Me
+						</div>
+					</div>
+					<div class="row">
+					
+						<div class="content col-l-6 col-m-10 col-s-20">
+						<div id="ab">
+						</div>
+						<div id="bao">
+							<span >关于我</span>
+							<p>
+								姓名：胡宇飞<br>
+								电话: 13834356282<br>
+								邮箱: 13834356282@163.com<br>
+								QQ: 1032583288<br>
+								职业：前端工程师<br>
+								籍贯：山西省吕梁市<br>
+								爱好：打篮球,音乐，旅游等<br>
+							</p>
+						</div>
+						</div>
+						
+						<div class="content col-l-6 col-l-offsetl-1 col-m-10 col-s-hid">
+						<div id="ab">
+						</div>
+						<div id="bao">
+							
+								<img src="./images/hyf.jpg" alt="" style="width: 285px;height: 320px;">
+							
+						</div>
+						</div>
+						
+						<div class="content col-l-6 col-l-offsetl-1 col-m-hid col-s-hid">
+						<div id="ab">
+						</div>
+						<div id="bao">
+							<span>自我评价</span>
+							<p>
+								&nbsp&nbsp具有良好的逻辑和学习能力。积极进取，勇于挑战，为人热情可靠，待人和善，工作勤奋刻苦，有出色的团队意识，抗压能力和强烈的责任感。
+							</p>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- skill -->
+	<div class="third">
+		<div class="cao">
+		<div class="container " id="hi5">
+			<div class="row">
+				<div class="skill">
+					Skill
+				</div>
+				<div class="skill-intr">
+					<div class="container skiller">
+						<div class="row">
+					From basic HTML + CSS first began to learn. When you have mastered the HTML + CSS will begin to learn to use javascript to achieve some interaction effect, to learn javascript, you can learn to use jQuery.
+						</div>
+					</div>
+				</div>
+				<div class="skillbox">
+					<div class="third-innerbox">
+						<div class="inner col-lg-1 col-md-4 col-sm-6 col-xs-12" href="#" data-icon="html5">
+                          <div class="c3 icon">
+                          	&#xe623;
+                          </div>
+                          <p class="sk"><span>Javascript </span> 
+                           <span>Jquery</span></p>
+                          <p class="sk"><span>精通js语言</span>
+                             <span id="er">(熟练掌握Jquery的使用方法)</span>
+                            </p>
+						</div>
+						<div class="inner col-lg-1 col-md-4 col-sm-6 col-xs-12" href="#" data-icon="css3">
+                          <div class="c3 icon">
+                          	&#xe890;
+                          </div>
+                          <p class="sk">HTML5</p>
+                          <p class="sk">(能够熟练使用)</p>
+						</div>
+						<div class="inner col-lg-1 col-md-4 col-sm-6 col-xs-12" href="#" data-icon="ps">
+                          <div class="c3 icon">
+                          	&#xe86c;
+                          </div>
+                          <p class="sk">CSS3</p>
+                          <p class="sk">能够熟练使用</p>
+						</div>
+						<div class="inner col-lg-1 col-md-4 col-sm-6 col-xs-12" href="#" data-icon="ai">
+                          <div class="c3 icon">
+                          <div class="less">Ps</div>
+                          </div>
+                          <p class="sk">PHOTOSHOP</p>
+                          <p class="sk">获得Adobe认证</p>
+						</div>
+						<div class="inner col-lg-1 col-md-4 col-sm-6 col-xs-12" href="#" data-icon="js">
+                          <div class="c3 icon">
+                          	<div class="less">less</div>
+                          </div>
+                          <p class="sk">css预处理语言</p>
+                          <p class="sk">能够熟练使用</p>
+						</div>
+                        <div class="inner col-lg-1 col-md-4 col-sm-6 col-xs-12" href="#" data-icon="js">
+                          <div class="c3 caocao">
+                          	&#xe605;
+                          </div>
+                          <p class="sk">强悍的前端开发框架</p>
+                          <p class="sk">能够非常熟练的套用</p>
+						</div>
+						<!--  -->
+						<div class="inner col-lg-1 col-md-4 col-sm-6 col-xs-12" href="#" data-icon="html5">
+                          <div class="c3 icon">
+                          	&#xe623;
+                          </div>
+                          <p class="sk"><span>Javascript </span> 
+                           <span>Jquery</span></p>
+                          <p class="sk"><span>精通js语言</span>
+                             <span id="er">(熟练掌握Jquery的使用方法)</span>
+                            </p>
+						</div>
+						<div class="inner col-lg-1 col-md-4 col-sm-6 col-xs-12" href="#" data-icon="css3">
+                          <div class="c3 icon">
+                          	&#xe890;
+                          </div>
+                          <p class="sk">HTML5</p>
+                          <p class="sk">(能够熟练使用)</p>
+						</div>
+						<div class="inner col-lg-1 col-md-4 col-sm-6 col-xs-12" href="#" data-icon="ps">
+                          <div class="c3 icon">
+                          	&#xe86c;
+                          </div>
+                          <p class="sk">CSS3</p>
+                          <p class="sk">能够熟练使用</p>
+						</div>
+						<div class="inner col-lg-1 col-md-4 col-sm-6 col-xs-12" href="#" data-icon="ai">
+                          <div class="c3 icon">
+                          	&#xe606;
+                          </div>
+                          <p class="sk">PHOTOSHOP</p>
+                          <p class="sk">获得Adobe认证</p>
+						</div>
+						<div class="inner col-lg-1 col-md-4 col-sm-6 col-xs-12" href="#" data-icon="js">
+                          <div class="c3 icon">
+                          	<div class="less">less</div>
+                          </div>
+                          <p class="sk">css预处理语言</p>
+                          <p class="sk">能够熟练使用</p>
+						</div>
+                        <div class="inner col-lg-1 col-md-4 col-sm-6 col-xs-12" href="#" data-icon="js">
+                          <div class="c3 caocao">
+                          	&#xe605;
+                          </div>
+                          <p class="sk">强悍的前端开发框架</p>
+                          <p class="sk">能够非常熟练的套用</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		</div>
+	</div>
+     <!-- design -->
+     <section class="four container-fluid">
+     	<div class="four-0">
+     		My works
+     	</div>
+     	<div class="four-1">
+     		<div class="de-title">
+     			<div class="de-btn1">All</div>
+     			<div class="de-btn2">Web</div>
+     			<div class="de-btn3">games</div>
+     			<div class="de-btn4">practice</div>
+     		</div>
+     		<div class="design-cons">
+     			<ul>
+     			<!-- 网页作品 -->
+     				<li class="conss web zuo">
+     					<a href="../tianmao/index.html">
+     						<img src="images/tt.jpg" alt="">
+                <div class="zz">V I E W</div>
+     					</a>
+                        
+     				</li>
+     				<li class="web conss zuo">
+     					<a href="../yihaodian/index.html">
+     						<img src="images/yhd.jpg" alt="">
+                  <div class="zz">V I E W</div>
+     					</a>
+                        
+     				</li>
+     				<li class="web conss zuo">
+     					<a href="../Apple-index/index.html">
+     						<img src="images/apple.jpg" alt="">
+                  <div class="zz">V I E W</div>
+     					</a>
+     				</li>
+
+
+
+					<!-- 游戏作品 -->
+     				<li class="games conss you">
+     					<a href="../bired/index.html">
+     						<img src="images/bird.jpg" alt="">
+                  <div class="zz">V I E W</div>
+     					</a>
+     				</li>
+
+     				<li class="games conss you">
+     					<a href="../wuziqi/index.html">
+     						<img src="images/five.jpg" alt="">
+                  <div class="zz">V I E W</div>
+     					</a>
+     				</li>
+     				<li class="games conss you">
+     					<a href="../snake/index.html">
+     						<img src="images/snake.jpg" alt="">
+                  <div class="zz">V I E W</div>
+     					</a>
+     				</li>
+     				<li class="games conss you">
+     					<a href="../saolei/index.html">
+     						<img src="images/saolei.jpg" alt="">
+                  <div class="zz">V I E W</div>
+     					</a>
+     				</li>
+
+					<!-- canvas作品 -->
+     				<li class="canvas conss you">
+     					<a href="../canvas/index.html">
+     						<img src="images/huaban.jpg" alt="">
+                  <div class="zz">V I E W</div>
+     					</a>
+     				</li>
+
+					<li class="canvas conss you">
+     					<a href="../bootstrap/index.html">
+     						<img src="images/bootstrap.jpg" alt="">
+                  <div class="zz">V I E W</div>
+     					</a>
+     				</li>
+
+     				<li class="canvas conss you">
+     					<a href="../QQMusic/index.html">
+     						<img src="images/qqyinyue.jpg" alt="">
+                  <div class="zz">V I E W</div>
+     					</a>
+     				</li>
+     			
+					
+
+     			</ul>
+     		</div>
+     	</div>
+     </section>
+	
+
+	<div class="contact">
+		<div class="contact-left"></div>
+		
+		<div class="contact-right">
+			<img src="images/contact/hyf.jpg" alt="">
+			<!-- <span>扫一扫关注 </span>
+			<span>了解更多哦!</span> -->
+		</div>
+		<div class="contact-middle">
+            
+		    <a href="http://wpa.qq.com/msgrd?v=3&uin=1032583288&site=qq&menu=yes" target="_blank" class="contact-middlesmall iconfont"><img src="images/contact/2.png" alt=""></a>
+
+		    <a href="" class="contact-middlesmall iconfont"><img src="images/contact/1.png" alt=""></a>
+
+		    <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=vdjU087J2NTT-czMk97S0A"style="text-decoration:none;margin-right:100px;" target="_blank" class="contact-middlesmall iconfont"><img src="images/contact/3.png" alt=""></a>
+
+		    <a class="contact-middleboss iconfont"><span id="float">联系我</span></a>
+
+		</div>
+		
+
+	</div>
+</body>
+</html>
